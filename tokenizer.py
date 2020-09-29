@@ -8,6 +8,7 @@ from tokenizers import ByteLevelBPETokenizer
 
 # Initialize a tokenizer
 tokenizer = ByteLevelBPETokenizer()
+tokenizer.enable_truncation(max_length=512)
 
 # Customize training
 paths=['corpus/ca_dedup.txt']

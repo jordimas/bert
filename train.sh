@@ -1,7 +1,9 @@
-# See 
 MODEL_DIR="models/roberta"
 OUTPUT_DIR="models/roberta/output"
 
+python3 model_config.py
+
+# Arguments documentation: https://huggingface.co/transformers/master/_modules/transformers/training_args.html
 python3 run_language_modeling.py \
 	--output_dir $OUTPUT_DIR \
 	--model_type roberta \

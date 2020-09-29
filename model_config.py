@@ -1,5 +1,6 @@
-
 import json
+
+vocab_size=5000
 
 config = {
   "attention_probs_dropout_prob": 0.1,

@@ -28,4 +28,4 @@ directory = "models/roberta"
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-tokenizer.save_model(directory)
+tokenizer.save(directory)

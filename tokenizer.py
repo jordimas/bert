@@ -1,5 +1,5 @@
 #! pip install tokenizers
-
+import os
 from pathlib import Path
 
 from tokenizers import ByteLevelBPETokenizer
@@ -20,4 +20,9 @@ tokenizer.train(files=paths, vocab_size=52_000, min_frequency=2, special_tokens=
 ])
 
 # Save files to disk
-tokenizer.save_model("models", "catalan-tokenizer")
+directory = "models/roberta"
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+tokenizer.save_model(directory)

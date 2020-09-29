@@ -1,9 +1,12 @@
-# See parameters
+# See 
+MODEL_DIR="models/roberta"
+OUTPUT_DIR="models/roberta/output"
+
 python3 run_language_modeling.py \
-	--output_dir models/catalan-small-v1 \
+	--output_dir $OUTPUT_DIR \
 	--model_type roberta \
 	--mlm \
-	--tokenizer_name models/catalan-tokenizer \
+	--tokenizer_name $MODEL_DIR \
 	--do_train \
 	--learning_rate 1e-4 \
 	--num_train_epochs 5 \
@@ -13,5 +16,5 @@ python3 run_language_modeling.py \
 	--evaluate_during_training \
 	--seed 42 \
 	--train_data_file dataset/src-train.txt \
-    --eval_data_file dataset/src-eval.txt \
-/
+    --eval_data_file dataset/src-eval.txt
+

@@ -1,1 +1,1 @@
-pip install transformers==2.8.0
+pip install transformers==3.2.0 # in sync with run_language_modeling

@@ -18,5 +18,7 @@ python3 run_language_modeling.py \
 	--evaluate_during_training \
 	--seed 42 \
 	--train_data_file dataset/src-train.txt \
-    --eval_data_file dataset/src-eval.txt
+    --eval_data_file dataset/src-eval.txt \
+    --line_by_line
+
 

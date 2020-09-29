@@ -9,3 +9,7 @@ git config --global user.email jmas@softcatala.org
 git clone https://github.com/jordimas/bert.git
 
 mkdir bert/dataset
+
+
+git clone https://github.com/huggingface/transformers.git
+git checkout v2.5.0

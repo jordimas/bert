@@ -11,8 +11,10 @@ tokenizer = ByteLevelBPETokenizer()
 tokenizer.enable_truncation(max_length=512)
 
 # Customize training
+
+vocab_size=5000
 paths=['corpus/ca_dedup.txt']
-tokenizer.train(files=paths, vocab_size=52_000, min_frequency=2, special_tokens=[
+tokenizer.train(files=paths, vocab_size=vocab_size, min_frequency=2, special_tokens=[
     "<s>",
     "<pad>",
     "</s>",

@@ -20,9 +20,10 @@ config = {
 }
 
 with open("models/roberta/config.json", 'w') as fp:
-    json.dump(config, fp)
+    json.dump(config, fp, indent=4)
+
 
 tokenizer_config = {"max_len": 512}
 
 with open("models/roberta/tokenizer_config.json", 'w') as fp:
-    json.dump(tokenizer_config, fp)
+    json.dump(tokenizer_config, fp, indent=4)

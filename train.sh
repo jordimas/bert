@@ -1,4 +1,4 @@
-python3 /home/jordi/sc/transformers/examples/language-modeling/run_language_modeling.py run_language_model.py \
+python3 run_language_modeling.py \
 	--output_dir models/catalan-small-v1 \
 	--model_type roberta \
 	--mlm \

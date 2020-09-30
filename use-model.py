@@ -13,3 +13,4 @@ fill_mask = pipeline(
 # =>
 
 result = fill_mask("La meva mare és <mask>")
+print(result)

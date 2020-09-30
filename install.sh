@@ -1,5 +1,6 @@
 mkdir -p dataset
 mkdir -p corpus
+mkdir -p models/roberta
 
 pip install tensorflow==2.1.0
 pip install transformers==2.5.0 # in sync with run_language_modeling

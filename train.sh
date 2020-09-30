@@ -1,11 +1,14 @@
 MODEL_DIR="models/roberta"
 OUTPUT_DIR="models/roberta/output"
+WEIGTHS_DIR="models/roberta/weights"
+
+mkdir -p  $WEIGTHS_DIR
 
 python3 model_config.py
 
 # Arguments documentation: https://huggingface.co/transformers/master/_modules/transformers/training_args.html
 CUDA_LAUNCH_BLOCKING=1 python3 transformers/examples/run_language_modeling.py \
-    --output_dir $OUTPUT_DIR \
+    --output_dir $WEIGTHS_DIR \
     --model_type roberta \
     --mlm \
     --train_data_file dataset/src-train.txt \

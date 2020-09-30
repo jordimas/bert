@@ -8,7 +8,7 @@ from tokenizers import ByteLevelBPETokenizer
 
 # Initialize a tokenizer
 tokenizer = ByteLevelBPETokenizer()
-#tokenizer.enable_truncation(max_length=512)
+tokenizer.enable_truncation(max_length=512)
 
 # Customize training
 

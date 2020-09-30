@@ -24,4 +24,5 @@ CUDA_LAUNCH_BLOCKING=1 python3 transformers/examples/run_language_modeling.py \
     --logging_steps 500 \
     --per_gpu_eval_batch_size 32 \
     --per_gpu_train_batch_size 32 \
-    --evaluate_during_training
+    --evaluate_during_training \
+    --seed 42

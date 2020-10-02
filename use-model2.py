@@ -4,10 +4,11 @@
 from transformers import RobertaTokenizer, RobertaForMaskedLM
 import torch
 
-tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
+tokenizer = RobertaTokenizer.from_pretrained('models/roberta/') 
+#tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
 model = RobertaForMaskedLM.from_pretrained('models/roberta/weights')
 
-sentence = "El cotxe és ___ ."
+sentence = "La meva mare és <mask> ___ ."
 
 
 def get_prediction (sent):

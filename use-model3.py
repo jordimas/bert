@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)# OPTIONAL
 
 
 
-tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
+tokenizer = RobertaTokenizer.from_pretrained('models/roberta')
 model = RobertaForMaskedLM.from_pretrained('models/roberta/weights')
 model.eval()
 # model.to('cuda')  # if you have gpu

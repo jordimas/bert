@@ -8,7 +8,7 @@ tokenizer = RobertaTokenizer.from_pretrained('models/roberta/')
 #tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
 model = RobertaForMaskedLM.from_pretrained('models/roberta/weights')
 
-sentence = "La meva mare és ___ ."
+sentence = "El meu cotxe és molt millor del que molts ___ ."
 
 
 def get_prediction (sent):

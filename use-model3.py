@@ -41,4 +41,4 @@ def predict_masked_sent(text, top_k=5):
 
         
 #predict_masked_sent("La meva mare [MASK] molt guapa.", top_k=20)
-predict_masked_sent("El meu pare és una bona <mask>.", top_k=50)
+predict_masked_sent("El meu cotxe és molt millor del que molts <mask>.", top_k=50)

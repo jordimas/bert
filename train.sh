@@ -1,6 +1,5 @@
 #MODEL_DIR="models/roberta"
-OUTPUT_DIR="models/roberta/output"
-WEIGTHS_DIR="models/roberta/weights"
+OUTPUT_DIR="models/roberta/weights"
 TRAIN_PATH="dataset/src-train.txt"
 EVAL_PATH="dataset/src-val.txt"
 TOKENIZER_NAME="models/roberta"
@@ -8,6 +7,7 @@ CONFIG_NAME="models/roberta"
 
 mkdir -p  $WEIGTHS_DIR
 
+python3 model_config.py
 
 # Arguments documentation: https://huggingface.co/transformers/master/_modules/transformers/training_args.html
 python3 transformers/examples/run_language_modeling.py \

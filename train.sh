@@ -16,16 +16,11 @@ python3 transformers/examples/run_language_modeling.py \
     --mlm \
     --config_name $CONFIG_NAME \
     --tokenizer_name $TOKENIZER_NAME \
-#    {line_by_line} \
-#    {should_continue} \
-#    {model_name_or_path} \
     --train_data_file $TRAIN_PATH \
     --eval_data_file $EVAL_PATH \
     --do_train \
     --do_eval \
-    --epochs 1 \ # Mine
-#    {do_eval} \
-#    {evaluate_during_training} \
+    --epochs 1 \
     --overwrite_output_dir \
     --block_size 512 \
     --max_step 25 \

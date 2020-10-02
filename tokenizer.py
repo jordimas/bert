@@ -1,3 +1,4 @@
+import os
 from tokenizers import ByteLevelBPETokenizer
 
 # Initialize a tokenizer

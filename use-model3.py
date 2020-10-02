@@ -4,6 +4,7 @@
 import torch
 from transformers import BertTokenizer, BertModel, BertForMaskedLM
 import logging
+from transformers import RobertaTokenizer, RobertaForMaskedLM
 logging.basicConfig(level=logging.INFO)# OPTIONAL
 
 

@@ -21,4 +21,4 @@ directory = "models/roberta"
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-tokenizer.savee("models/roberta")
+tokenizer.save("models/roberta")

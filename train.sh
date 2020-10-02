@@ -20,7 +20,7 @@ python3 transformers/examples/run_language_modeling.py \
     --eval_data_file $EVAL_PATH \
     --do_train \
     --do_eval \
-    --epochs 1 \
+    --num_train_epochs 1 \
     --overwrite_output_dir \
     --block_size 512 \
     --max_step 25 \

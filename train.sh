@@ -5,7 +5,7 @@ EVAL_PATH="dataset/src-val.txt"
 TOKENIZER_NAME="models/roberta"
 CONFIG_NAME="models/roberta"
 
-mkdir -p  $WEIGTHS_DIR
+mkdir -p  $OUTPUT_DIR
 
 python3 model_config.py
 

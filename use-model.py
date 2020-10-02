@@ -12,5 +12,5 @@ fill_mask = pipeline(
 # The sun <mask>.
 # =>
 
-result = fill_mask("La meva mare és <mask>")
+result = fill_mask("La meva mare és <mask>.")
 print(result)

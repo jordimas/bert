@@ -21,7 +21,7 @@ def predict_masked_sent(text, top_k=5):
     text = "[CLS] %s [SEP]"%text
     tokenized_text = tokenizer.tokenize(text)
     #print(tokenizer.lang2id)
-    masked_index = tokenized_text.index("[MASK]")
+    masked_index = tokenized_text.index("<mask>")
     indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
     tokens_tensor = torch.tensor([indexed_tokens])
     # tokens_tensor = tokens_tensor.to('cuda')    # if you have gpu
@@ -41,4 +41,4 @@ def predict_masked_sent(text, top_k=5):
 
         
 #predict_masked_sent("La meva mare [MASK] molt guapa.", top_k=20)
-predict_masked_sent("El meu para és una bona [MASK].", top_k=50)
+predict_masked_sent("El meu pare és una bona <mask>.", top_k=50)

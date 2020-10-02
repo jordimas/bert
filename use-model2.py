@@ -7,7 +7,7 @@ import torch
 tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
 model = RobertaForMaskedLM.from_pretrained('models/roberta/weights')
 
-sentence = "El meu coxte és ___ ."
+sentence = "El cotxe és ___ ."
 
 
 def get_prediction (sent):

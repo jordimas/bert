@@ -1,5 +1,4 @@
 mkdir -p dataset
-mkdir -p corpus
 mkdir -p models/roberta
 
 pip uninstall -y tensorflow

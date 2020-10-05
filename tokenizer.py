@@ -6,12 +6,11 @@ from tokenizers import ByteLevelBPETokenizer
 
 # Initialize a tokenizer
 tokenizer = ByteLevelBPETokenizer()
-#tokenizer.enable_truncation(max_length=512)
 
 # Customize training
 
 vocab_size=50265
-path='corpus/ca_dedup.txt'
+path='data/train.txt'
 # Customize training
 tokenizer.train(files=path,
                 vocab_size=50265,
@@ -24,4 +23,4 @@ directory = "models/roberta"
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-tokenizer.save("models/roberta")
+tokenizer.save(directory)

@@ -28,25 +28,6 @@ def file_len(fname):
     return i + 1
 
 
-def _clean_localized(result):
-    original = result
-    mapping = {
-                '’' : '\'',
-                'à' : 'à',
-                'í' : 'í',
-                'ó' : 'ó',
-                'è' : 'è',
-                'ò' : 'ò',
-                'ú' : 'ú',
-              }
-
-    for char in mapping.keys():
-        result = result.replace(char, mapping[char])
-
-    cleaned = original != result
-    return result, cleaned
-
-
 def split_in_two_files(src_filename):
 
     pairs = set()
@@ -106,7 +87,7 @@ def split_in_two_files(src_filename):
     pclean = clean * 100 / strings
     pduplicated = duplicated * 100 / strings
     print(f"Strings: {strings}, duplicated {duplicated} ({pduplicated:.2f}%)")
-    print(f"Cleaned acute accents: {clean} ({pclean:.2f}%)")
+
 
 def append_lines_from_file(src_filename, trg_file):
     lines = 0

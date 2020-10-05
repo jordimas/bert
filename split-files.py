@@ -107,7 +107,7 @@ def main():
 
     print("Joins several corpus and creates a final train, validation and test dataset")
 
-    split_in_two_files("ca_dedup.txt")
+    split_in_two_files("corpus/ca_dedup.txt")
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import json
 config = {
 	"architectures": [
@@ -25,4 +28,3 @@ tokenizer_config = {"max_len": 512}
 
 with open("models/roberta/tokenizer_config.json", 'w') as fp:
     json.dump(tokenizer_config, fp)
-

@@ -17,6 +17,8 @@ line_by_line=""
 should_continue=""
 model_name_or_path=""
 
+python model_config.py
+
 python run_language_modeling.py \
     --output_dir $output_dir \
     --model_type $model_type \

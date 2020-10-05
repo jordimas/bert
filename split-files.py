@@ -37,9 +37,11 @@ def split_in_two_files(src_filename):
     strings = 0
     duplicated = 0
 
-    print("Split src and tgt files in 6 files for training, text and validation")
+    print("Split src and tgt files in 3 files for training, text and validation")
 
     total_lines = file_len(src_filename)
+    total_lines = 12000000 # Fix lines to 12 million
+
     validation_each = round(total_lines / number_validation)
     test_each = round(total_lines / number_test)
 
@@ -47,9 +49,9 @@ def split_in_two_files(src_filename):
         print("test_each ({0}) and validation_each  ({0}) cannot be equal".format(test_each, validation_each))
         return
         
-    with open("src-val.txt", "w") as source_val,\
-        open("src-test.txt", "w") as source_test,\
-        open("src-train.txt", "w") as source_train,\
+    with open("data/src-val.txt", "w") as source_val,\
+        open("data/src-test.txt", "w") as source_test,\
+        open("data/src-train.txt", "w") as source_train,\
         open(src_filename, "r") as read_source:
 
 

@@ -1,4 +1,4 @@
-mkdir -p dataset
+mkdir -p data
 mkdir -p models/roberta
 
 pip uninstall -y tensorflow

@@ -43,7 +43,7 @@ python run_language_modeling.py \
     --weight_decay 0.01 \
     --adam_epsilon 1e-6 \
     --max_grad_norm 100.0 \
-    --save_total_limit 10 \
-    --save_steps 10 \
+    --save_total_limit 2 \
+    --save_steps 1000 \
     --logging_steps 2 \
     --seed 42

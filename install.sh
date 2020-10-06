@@ -10,7 +10,7 @@ pip install tensorbord==2.1.0
 git config --global user.name "Jordi Mas"
 git config --global user.email jmas@softcatala.org
 git clone https://github.com/jordimas/bert.git
-
+sudo updatedb &
 
 
 #git clone https://github.com/huggingface/transformers.git

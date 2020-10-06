@@ -4,7 +4,7 @@ mkdir -p models/roberta
 pip uninstall -y tensorflow
 pip install transformers==2.8.0
 pip install torch==1.6.0
-pip install tensorbord==2.1.0
+pip install tensorboard==2.1.0
 
 
 git config --global user.name "Jordi Mas"

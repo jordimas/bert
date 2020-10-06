@@ -10,7 +10,7 @@ tokenizer = ByteLevelBPETokenizer()
 # Customize training
 
 vocab_size=50265
-path='data/train.txt'
+path='data/src-train.txt'
 # Customize training
 tokenizer.train(files=path,
                 vocab_size=50265,

@@ -2,8 +2,8 @@
 MODEL_TYPE="roberta" #@param ["roberta", "bert"]
 MODEL_DIR="models/roberta" #@param {type: "string"}
 OUTPUT_DIR="models/roberta/output" #@param {type: "string"}
-TRAIN_PATH="data/train.txt" #@param {type: "string"}
-EVAL_PATH="data/dev.txt" #@param {type: "string"}
+TRAIN_PATH="data/src-train.txt" #@param {type: "string"}
+EVAL_PATH="data/src-val.txt" #@param {type: "string"}
 
 output_dir=$OUTPUT_DIR
 model_type=$MODEL_TYPE

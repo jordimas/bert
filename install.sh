@@ -3,7 +3,7 @@ mkdir -p models/roberta
 
 pip uninstall -y tensorflow
 pip install transformers==2.8.0
-pip install transformers==torch
+pip install torch==1.6.0
 pip install tensorbord==2.1.0
 
 

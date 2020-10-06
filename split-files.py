@@ -62,11 +62,13 @@ def split_in_two_files(src_filename):
         print("test_each {0}".format(test_each))
 
         clean = 0
+        lines = 0
         while True:
 
             src = read_source.readline()
+            lines = lines + 1
 
-            if not src:
+            if not src or lines > total_lines:
                 break
 
             pair = src

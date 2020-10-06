@@ -35,7 +35,7 @@ python run_language_modeling.py \
     $evaluate_during_training \
     --overwrite_output_dir \
     --block_size 512 \
-    --max_step 10 \
+    --max_step 50000 \
     --warmup_steps 10 \
     --learning_rate 5e-5 \
     --per_gpu_train_batch_size 4 \

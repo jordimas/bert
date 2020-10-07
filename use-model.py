@@ -5,7 +5,7 @@ from transformers import pipeline
 
 fill_mask = pipeline(
     "fill-mask",
-    model="models/roberta/weights",
+    model="models/roberta/output",
     tokenizer="models/roberta/"
 )
 

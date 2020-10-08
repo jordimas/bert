@@ -6,7 +6,7 @@ import torch
 
 tokenizer = RobertaTokenizer.from_pretrained('models/roberta/') 
 #tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
-model = RobertaForMaskedLM.from_pretrained('models/roberta/weights')
+model = RobertaForMaskedLM.from_pretrained('models/roberta/output')
 
 sentence = "El meu cotxe és molt millor del que molts ___ ."
 

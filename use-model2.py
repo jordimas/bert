@@ -5,10 +5,16 @@ from transformers import RobertaTokenizer, RobertaForMaskedLM
 import torch
 
 tokenizer = RobertaTokenizer.from_pretrained('models/roberta/') 
-#tokenizer = RobertaTokenizer.from_pretrained('models/roberta/weights')
-model = RobertaForMaskedLM.from_pretrained('models/roberta/output')
+model = RobertaForMaskedLM.from_pretrained('models/roberta/output/')
 
-sentence = "El meu cotxe és molt millor del que molts ___ ."
+sentences = [ \
+    "El meu cotxe és molt millor del que molts ___.",
+    "El tribunal considera provat que els acusats van ___ gairebé 24 milions d'euros.",
+    "Els principals responsables de l'empresa que ___ la depuradora.",
+    "El meu pare és el més ___ del grup",
+    "El cotxe està ___.",
+    "Tinc tanta son que a les cinc tinc ___.",
+]
 
 
 def get_prediction (sent):
@@ -25,22 +31,19 @@ def get_prediction (sent):
     list_of_list =[]
     for index,mask_index in enumerate(masked_pos):
         mask_hidden_state = last_hidden_state[mask_index]
-        idx = torch.topk(mask_hidden_state, k=5, dim=0)[1]
+        idx = torch.topk(mask_hidden_state, k=10, dim=0)[1]
         words = [tokenizer.decode(i.item()).strip() for i in idx]
         list_of_list.append(words)
-        print ("Mask ",index+1,"Guesses : ",words)
+        #print ("Mask ",index+1,"Guesses : ",words)
     
     best_guess = ""
     for j in list_of_list:
-        best_guess = best_guess+" "+j[0]
+        best_guess = best_guess+""+j[0]
         
-    return best_guess
+    return words, best_guess
 
-
-print ("Original Sentence: ",sentence)
-sentence = sentence.replace("___","<mask>")
-print ("Original Sentence replaced with mask: ",sentence)
-print ("\n")
-
-predicted_blanks = get_prediction(sentence)
-print ("\nBest guess for fill in the blank :::",predicted_blanks)
+for sentence in sentences:
+    sentence = sentence.replace("___","<mask>")
+    print (sentence)
+    words,  best_guess = get_prediction(sentence)
+    print (f"Predicted words:{words}, best_guess '{best_guess}'\n")

@@ -25,7 +25,7 @@ def get_prediction (sent):
     list_of_list =[]
     for index,mask_index in enumerate(masked_pos):
         mask_hidden_state = last_hidden_state[mask_index]
-        idx = torch.topk(mask_hidden_state, k=30, dim=0)[1]
+        idx = torch.topk(mask_hidden_state, k=50, dim=0)[1]
         words = [tokenizer.decode(i.item()).strip() for i in idx]
         list_of_list.append(words)
         #print ("Mask ",index+1,"Guesses : ",words)
@@ -55,7 +55,7 @@ for sentence in sentences:
     pos, sentence, word = mask_sentence(sentence, pos)
     print(f"sentence: {sentence}, word: {word}, pos {pos}")
     words, best_guess = get_prediction(sentence)
-    print(words)
+#    print(words)
     if word in words:
         predicted = predicted + 1
     else:

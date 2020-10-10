@@ -5,7 +5,7 @@ from transformers import RobertaTokenizer, RobertaForMaskedLM
 import torch
 
 tokenizer = RobertaTokenizer.from_pretrained('models/roberta/') 
-model = RobertaForMaskedLM.from_pretrained('models/roberta/output/checkpoint-430000')
+model = RobertaForMaskedLM.from_pretrained('models/roberta/output/checkpoint-429000')
 
 sentences = None
 with open('test-corpus/test.txt') as f:
@@ -68,3 +68,5 @@ p_predicted = predicted * 100 /tot;
 p_not_predicted = not_predicted * 100 /tot;
 print(f"predicted: {predicted} ({p_predicted:.2f}%)")
 print(f"not_predicted: {not_predicted} ({p_not_predicted:.2f}%)")
+#predicted: 14 (46.67%)
+

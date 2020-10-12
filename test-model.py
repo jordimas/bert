@@ -5,7 +5,7 @@ from transformers import RobertaTokenizer, RobertaForMaskedLM
 import torch
 
 tokenizer = RobertaTokenizer.from_pretrained('models/roberta/') 
-model = RobertaForMaskedLM.from_pretrained('models/roberta/output/checkpoint-429000')
+model = RobertaForMaskedLM.from_pretrained('models/roberta/output/checkpoint-500000/')
 
 sentences = None
 with open('test-corpus/test.txt') as f:
@@ -44,29 +44,29 @@ def mask_sentence(sentence, pos):
     word = words[pos]
     sentence = sentence.replace(word, '<mask>', 1)
 
-    return pos, sentence, word
+    return sentence, word
 
-pos = 0
 predicted = 0
 not_predicted = 0
 
-for sentence in sentences:
-    sentence = sentence.replace("\n","")
-    pos, sentence, word = mask_sentence(sentence, pos)
-    print(f"sentence: {sentence}, word: {word}, pos {pos}")
-    words, best_guess = get_prediction(sentence)
-#    print(words)
-    if word in words:
-        predicted = predicted + 1
-    else:
-        not_predicted = not_predicted + 1
+for sentence_org in sentences:
 
-    pos = pos + 1
+    sentence_org = sentence_org.replace("\n","")
+    n_words = len(sentence_org.split())
+    for pos in range(0, n_words):
+        
+        sentence, word = mask_sentence(sentence_org, pos)
+        print(f"sentence: {sentence}, word: {word}, pos {pos}")
+        words, best_guess = get_prediction(sentence)
+    #    print(words)
+        if word in words:
+            predicted = predicted + 1
+        else:
+            not_predicted = not_predicted + 1
 
 tot = predicted + not_predicted
 p_predicted = predicted * 100 /tot;
 p_not_predicted = not_predicted * 100 /tot;
 print(f"predicted: {predicted} ({p_predicted:.2f}%)")
 print(f"not_predicted: {not_predicted} ({p_not_predicted:.2f}%)")
-#predicted: 14 (46.67%)
 

@@ -38,9 +38,6 @@ def get_prediction (sent):
 
 def mask_sentence(sentence, pos):
     words = sentence.split()
-    if pos >= len(words):
-        pos = 0
-
     word = words[pos]
     sentence = sentence.replace(word, '<mask>', 1)
 

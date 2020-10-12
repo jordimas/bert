@@ -55,26 +55,28 @@ def mask_sentence(sentence, pos):
     word = words[pos]
     sentence = sentence.replace(word, '<mask>', 1)
 
-    return pos, sentence, word
+    return sentence, word
 
-pos = 0
 predicted = 0
 not_predicted = 0
 
-for sentence in sentences:
-    print(sentence)
-    sentence = sentence.replace("\n","")
-    pos, sentence, word = mask_sentence(sentence, pos)
-    sentence = sentence.replace("<mask>", "[MASK]")
-    print(f"sentence: {sentence}, word: {word}, pos {pos}")
-    words, best_guess = get_prediction(sentence)
-#    print(words)
-    if word in words:
-        predicted = predicted + 1
-    else:
-        not_predicted = not_predicted + 1
+for sentence_org in sentences:
 
-    pos = pos + 1
+    sentence_org = sentence_org.replace("\n","")
+    n_words = len(sentence_org.split())
+    for pos in range(0, n_words):
+        
+        sentence, word = mask_sentence(sentence_org, pos)
+        sentence = sentence.replace("<mask>", "[MASK]")
+
+        print(f"sentence: {sentence}, word: {word}, pos {pos}")
+        words, best_guess = get_prediction(sentence)
+    #    print(words)
+        if word in words:
+            predicted = predicted + 1
+        else:
+            not_predicted = not_predicted + 1
+
 
 tot = predicted + not_predicted
 p_predicted = predicted * 100 /tot;
